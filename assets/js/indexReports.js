@@ -1,6 +1,7 @@
 
 $(function() {
   $('#btnDataSearch').click(function() {
+    console.log("ejecutando correción...");
     $('#spinnerLoad').show()
     getDataReports()
   })
@@ -13,15 +14,21 @@ function getDataReports() {
   let day = parseInt(aux[2]);
   let month = parseInt(aux[1]);
   let year = parseInt(aux[0]);
+
   if(endMonth.includes(day)){
     day = '01';
-    month = month + 1;
+    if(month == 12){
+      month = 1;
+    }else{
+      month = month + 1;
+    }
   }else{
     day = day + 1;
     if(day < 10){
       day = '0'+day
     }
   }
+
   if (month < 10) {
     month = '0'+month
   }
@@ -51,9 +58,13 @@ function getDataReports() {
     lapsoDosStart = year+'-'+month+'-'+auxDia
     lapsoDosFinal = year+'-'+month+'-'+day
   }else{
+
+    if(monthStart > month){
+      year = year + 1;
+    }
+
     let dayFinalsMonth = endMonth[parseInt(monthStart)];
     let daysAfterEndMonth = day;
-
 
     let diferencia = Math.trunc((parseInt(dayFinalsMonth) - parseInt(dayStart))/2)
     let auxDia = (parseInt(dayStart) + diferencia)+1;
@@ -61,12 +72,13 @@ function getDataReports() {
       auxDia = '0'+auxDia;
     }
     lapsoUnoStart = yearStart+'-'+monthStart+'-'+dayStart
-    lapsoUnoFinal = year+'-'+monthStart+'-'+auxDia
+    lapsoUnoFinal = yearStart+'-'+monthStart+'-'+auxDia
 
-    lapsoDosStart = year+'-'+monthStart+'-'+auxDia
+    lapsoDosStart = yearStart+'-'+monthStart+'-'+auxDia
     lapsoDosFinal = year+'-'+month+'-'+daysAfterEndMonth
 
   }
+
   var dataLapUno;
   let dataSearch = new Object();
       dataSearch.dateStart = lapsoUnoStart
@@ -74,7 +86,6 @@ function getDataReports() {
       dataSearch.status = $('#selectStatus').val()
 
   let dataSearchJson = JSON.stringify(dataSearch)
-
 
   $.post('../controller/dataController.php',
     {
@@ -89,8 +100,6 @@ function getDataReports() {
             dataSearch2.dateStart = lapsoDosStart
             dataSearch2.dateFinal = lapsoDosFinal
             dataSearch2.status = $('#selectStatus').val()
-
-
 
         let dataSearchJson2 = JSON.stringify(dataSearch2)
 
@@ -119,8 +128,8 @@ function getDataReports() {
       },
     "json"
   );
-
 }
+
 
 function renderReport(jsonData) {
 
