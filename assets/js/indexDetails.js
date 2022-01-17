@@ -163,11 +163,13 @@ function renderDetails(jsonData) {
     }
   }
 
+  //alert(jsonData[0].customer_note);
   let comments = 'N/A'
-  if(jsonData.customer_note){
-    comments = jsonData.customer_note;
+  if(jsonData[0].customer_note){
+    comments = jsonData[0].customer_note;
+    //alert(comments);
   }
-
+  //console.log(comments);
   $('#references').text(references)
   $('#comments').text(comments)
 
