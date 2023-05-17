@@ -4,9 +4,9 @@ class BD {
     //public $cadena0 = "mysql:host=127.0.0.1;dbname=";
     //public $cadena1 = "idCliente00XX";
     //public $cadena;
-    public $cadena = "mysql:host=134.122.114.60;dbname=newtumarchante";
-    public $user = "marchante";
-    public $password = "m@rch@nt3.";
+    public $cadena = "mysql:host=;dbname=";
+    public $user = "";
+    public $password = "";
     public $conn;
     public $depuracion = true;
 
