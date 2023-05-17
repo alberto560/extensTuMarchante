@@ -236,8 +236,8 @@
 
           $woocommerce = new Client(
             'https://tumarchante.mx',
-            'ck_26296d3d60aaa31c32ff9134564491a7b3608e19',
-            'cs_734ae1d4c08e0208f4c29e146b039f1fdc5b8203',
+            'ck_',
+            'cs_',
             [
                 'version' => 'wc/v3',
             ]
@@ -277,7 +277,7 @@
             //echo $idOrderConek;
 
             if ($idOrderConek != '') {
-              \Conekta\Conekta::setApiKey("key_Xxzxs1zrwxv1q5otBtVQEA");
+              \Conekta\Conekta::setApiKey("key_");
               \Conekta\Conekta::setApiVersion("2.0.0");
               $order = \Conekta\Order::find($idOrderConek);
               $dataBank = $order['charges'][0]['payment_method']['issuer'];
@@ -303,7 +303,7 @@
         function dataLogin($parametros){
           session_start();
           $pass = implode(array($parametros->pass));
-          $pwd = 'tumarchante2021';
+          $pwd = '';
 
           if($pass == $pwd){
             return 1;
