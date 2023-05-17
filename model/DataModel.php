@@ -38,8 +38,8 @@
 
           $woocommerce = new Client(
             'https://tumarchante.mx',
-            'ck_26296d3d60aaa31c32ff9134564491a7b3608e19',
-            'cs_734ae1d4c08e0208f4c29e146b039f1fdc5b8203',
+            'ck_',
+            'cs_',
             [
                 'version' => 'wc/v3',
             ]
@@ -66,8 +66,8 @@
           $arrayGral = [];
           $woocommerce = new Client(
             'https://tumarchante.mx',
-            'ck_26296d3d60aaa31c32ff9134564491a7b3608e19',
-            'cs_734ae1d4c08e0208f4c29e146b039f1fdc5b8203',
+            'ck_',
+            'cs_',
             [
                 'version' => 'wc/v3',
             ]
@@ -110,8 +110,8 @@
 
             $woocommerce = new Client(
               'https://tumarchante.mx',
-              'ck_26296d3d60aaa31c32ff9134564491a7b3608e19',
-              'cs_734ae1d4c08e0208f4c29e146b039f1fdc5b8203',
+              'ck_',
+              'cs_',
               [
                   'version' => 'wc/v3',
               ]
@@ -213,8 +213,8 @@
         function getDataReports($parametros){
           $woocommerce = new Client(
             'https://tumarchante.mx',
-            'ck_26296d3d60aaa31c32ff9134564491a7b3608e19',
-            'cs_734ae1d4c08e0208f4c29e146b039f1fdc5b8203',
+            'ck_',
+            'cs_',
             [
                 'version' => 'wc/v3',
             ]
