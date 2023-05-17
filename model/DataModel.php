@@ -91,7 +91,7 @@
 
         function getDataConekt($parametros){
           $idOrderConek = implode(array($parametros->idOrderConek));
-          \Conekta\Conekta::setApiKey("key_Xxzxs1zrwxv1q5otBtVQEA");
+          \Conekta\Conekta::setApiKey("key_");
           \Conekta\Conekta::setApiVersion("2.0.0");
           $order = \Conekta\Order::find($idOrderConek);
           //var_dump($order);
